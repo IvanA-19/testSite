@@ -1,8 +1,13 @@
 {% extends 'main/base.html' %}
 
-{% block title %}Home page{% endblock %}
 
-{% block content %}
-    <p>Home page</p>
-    <a href="https://yandex.ru/images/search?pos=0&from=tabbar&img_url=https%3A%2F%2Fsun9-76.userapi.com%2Fimpf%2Fc9VZxZ_UhSLzLZpFPPxIl4jeMT24kOryzQtozA%2F407uQjCGsLI.jpg%3Fsize%3D1024x768%26quality%3D96%26sign%3Ddc765c120a5bb58bca89fdadbcee3018%26c_uniq_tag%3DeJm0RDwxBcevraJrFS6B_0_tPZH_IZZ7jGFrsv5-W2c%26type%3Dalbum&text=%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8+%D1%81+%D0%BA%D0%BE%D1%82%D1%8F%D1%82%D0%B0%D0%BC%D0%B8&rpt=simage&lr=20037">Котик</a>
+{% block title %} Home page {% endblock %}
+
+{% block page_header %}
+    <div class="jumbotron">
+        <h1 class="display-3">Track your learning.</h1>
+        <p class="lead">Make your own Learning Log, and keep a list o the topics you are learning about.
+        Whenever you learn something new about a topic, make an entry summarizing what you've learned.</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
+    </div>
 {% endblock %}

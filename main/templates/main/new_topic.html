@@ -1,13 +1,15 @@
 {% extends 'main/base.html' %}
+{% load django_bootstrap5 %}
 
-{% block title %}Create new topic{% endblock %}
+{% block title %}New topic{{ topic }} {% endblock %}
 
 {% block content %}
-    <p>Add a new topic: </p>
+    <p>New topic</p>
+
     <form action="{% url 'main:new_topic' %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">Add topic</button>
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Add a new topic" %}
     </form>
 
 {% endblock %}

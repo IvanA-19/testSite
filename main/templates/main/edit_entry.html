@@ -1,16 +1,16 @@
 {% extends 'main/base.html' %}
+{% load django_bootstrap5 %}
 
-{% block title %}Edit entry{% endblock %}
+{% block title %}Edit entry{{ topic }} {% endblock %}
 
 {% block content %}
-    <p>
-        <a href="{% url 'main:topic' topic.id %}">{{ topic }}</a>
-    </p>
-    <p>Edit entry: </p>
+    <p><a href="{% url 'main:topic' topic.id%}">{{ topic }}</a></p>
+    <p>Edit entry:</p>
+
     <form action="{% url 'main:edit_entry' entry.id %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit">Save changes</button>
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Save changes" %}
     </form>
 
 {% endblock %}
