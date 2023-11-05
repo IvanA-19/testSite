@@ -19,7 +19,7 @@
             <h4 class="card-header">
                 {{ entry.date_added|date:'M, d, Y, H:i' }}
                 {{ entry.user_name }}
-                {% if entry.user_name == user %}
+                {% if entry.user_name == user_name %}
                     <small><a href="{% url 'main:edit_entry' entry.id %}">Edit entry</a></small>
                 {% endif %}
             </h4>

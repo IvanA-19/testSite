@@ -20,11 +20,10 @@ def topics(request):
 @login_required
 def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
-    user = request.user
+    user_name = request.user
     entries = topic.entry_set.order_by('-date_added')
-    print(user)
     context = {'topic': topic,
-               'entries': entries, 'user': str(user)}
+               'entries': entries, 'user_name': str(user_name)}
     return render(request, 'main/topic.html', context)
 
 
