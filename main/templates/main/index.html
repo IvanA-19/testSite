@@ -5,9 +5,10 @@
 
 {% block page_header %}
     <div class="jumbotron">
-        <h1 class="display-3">Track your learning.</h1>
-        <p class="lead">Make your own Learning Log, and keep a list o the topics you are learning about.
-        Whenever you learn something new about a topic, make an entry summarizing what you've learned.</p>
-        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Регистрация &raquo;</a>
+        <h1 class="display-3">Делитесь своими темами!</h1>
+        <p class="lead">Добавляйте новые темы и комментарии к ним, читайте комментарии других пользователей
+            и комментируйте их темы! Редактируйте свои комментарии, если вдруг допустили ошибку или забыли что-то
+        написать.</p>
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Регистрация</a>
     </div>
 {% endblock %}
