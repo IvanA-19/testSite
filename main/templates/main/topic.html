@@ -5,13 +5,13 @@
 {% block page_header %}
     <h3>
         {{ topic }}
-        By {{ topic.user_name }}
+        От {{ topic.user_name }}
     </h3>
 {% endblock %}
 
 {% block content %}
     <p>
-        <a href="{% url 'main:new_entry' topic.id %}">Add new entry</a>
+        <a href="{% url 'main:new_entry' topic.id %}">Добавить комментарий</a>
     </p>
 
     {% for entry in entries %}
@@ -20,7 +20,7 @@
                 {{ entry.date_added|date:'M, d, Y, H:i' }}
                 {{ entry.user_name }}
                 {% if entry.user_name == user_name %}
-                    <small><a href="{% url 'main:edit_entry' entry.id %}">Edit entry</a></small>
+                    <small><a href="{% url 'main:edit_entry' entry.id %}">Редактировать</a></small>
                 {% endif %}
             </h4>
             <div class="card-body">
@@ -28,7 +28,7 @@
             </div>
         </div>
         {% empty %}
-            <p>There are no entries for this topic yet.</p>
+            <p>Нет комментариев по данной теме.</p>
         {% endfor %}
 
 {% endblock %}

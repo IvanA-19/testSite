@@ -1,16 +1,16 @@
 {% extends 'main/base.html' %}
 {% load django_bootstrap5 %}
 
-{% block title %}New entry{% endblock %}
+{% block title %}Добавить комментарий{% endblock %}
 
 {% block content %}
     <p><a href="{% url 'main:topic' topic.id%}">{{ topic }}</a></p>
-    <p>Add new entry:</p>
+    <p>Добавите комментарий:</p>
 
     <form action="{% url 'main:new_entry' topic.id %}" method="post">
         {% csrf_token %}
         {% bootstrap_form form %}
-        {% bootstrap_button button_type="submit" content="Add a new entry" %}
+        {% bootstrap_button button_type="submit" content="Добавить комментарий" %}
     </form>
 
 {% endblock %}

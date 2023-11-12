@@ -1,9 +1,9 @@
 {% extends 'main/base.html' %}
 
-{% block title %} Topics {% endblock %}
+{% block title %} Темы {% endblock %}
 
 {% block page_header %}
-    <h1>Topics</h1>
+    <h1>Темы</h1>
 {% endblock %}
 
 {% block content %}
@@ -13,10 +13,10 @@
                 <a href="{% url 'main:topic' topic.id %}" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">{{ topic }}</a>
             </h3></li>
         {% empty %}
-            <li><h3>No topics have been added yet.</h3></li>
+            <li><h3>Нет ни одной темы для обсуждения.</h3></li>
         {% endfor %}
     </ul>
 
-    <h3><a href="{% url 'main:new_topic' %}" class="btn btn-lg btn-primary">Add a new topic</a></h3>
+    <h3><a href="{% url 'main:new_topic' %}" class="btn btn-lg btn-primary">Добавить тему.</a></h3>
 
 {% endblock %}
